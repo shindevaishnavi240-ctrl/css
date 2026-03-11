@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Official Form Validation System</title>
+
+<!-- CSS inside HTML -->
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Segoe UI, sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#4facfe,#00f2fe);
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.container{
+    background:white;
+    width:380px;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 15px 30px rgba(0,0,0,0.2);
+}
+
+h2{
+    text-align:center;
+    margin-bottom:20px;
+    color:#333;
+}
+
+.input-group{
+    margin-bottom:15px;
+}
+
+label{
+    font-weight:600;
+    font-size:14px;
+}
+
+input{
+    width:100%;
+    padding:10px;
+    margin-top:5px;
+    border-radius:6px;
+    border:1px solid #ccc;
+    font-size:14px;
+}
+
+input:focus{
+    border-color:#4facfe;
+    outline:none;
+}
+
+input.valid{
+    border:2px solid #28a745;
+}
+
+input.invalid{
+    border:2px solid #dc3545;
+}
+
+.error{
+    color:#dc3545;
+    font-size:12px;
+    margin-top:3px;
+}
+
+.strength{
+    font-size:12px;
+    margin-top:3px;
+    font-weight:bold;
+}
+
+button{
+    width:100%;
+    padding:10px;
+    background:#4facfe;
+    border:none;
+    color:white;
+    font-size:16px;
+    border-radius:6px;
+    cursor:pointer;
+    margin-top:10px;
+}
+
+button:hover{
+    background:#2e8df7;
+}
+
+.success{
+    text-align:center;
+    margin-top:10px;
+    font-weight:bold;
+}
+</style>
+
+<!-- Link to external JS -->
+<script src="demo.js" defer></script>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Form Validation</h2>
+
+<form id="form" novalidate>
+
+<div class="input-group">
+<label>Name</label>
+<input type="text" id="name">
+<div class="error" id="nameError"></div>
+</div>
+
+<div class="input-group">
+<label>Email</label>
+<input type="text" id="email">
+<div class="error" id="emailError"></div>
+</div>
+
+<div class="input-group">
+<label>Age</label>
+<input type="number" id="age">
+<div class="error" id="ageError"></div>
+</div>
+
+<div class="input-group">
+<label>Password</label>
+<input type="password" id="password">
+<div class="strength" id="strengthMsg"></div>
+<div class="error" id="passwordError"></div>
+</div>
+
+<button type="submit">Submit</button>
+
+<div class="success" id="formStatus"></div>
+
+</form>
+
+</div>
+
+</body>
+</html>
